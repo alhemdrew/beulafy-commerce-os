@@ -214,36 +214,17 @@ Remaining
 
 ---
 
-# Screenshots
 
-## Payment Architecture
+## Current Development Focus
 
-![](docs/screenshots/9-payment-architecture.png)
+The migration is currently in its integration and validation phase.
 
----
+The remaining implementation focuses on:
 
-## Product Checkout
+- Completing Sandbox payment execution
+- Webhook verification using live events
+- Recurring subscription lifecycle
+- Final callback validation
+- Production deployment preparation
 
-![](docs/screenshots/4-product-checkout.png)
-
----
-
-## Subscription Payment
-
-![](docs/screenshots/5-subscription-payment.png)
-
----
-
-## Payment Success
-
-![](docs/screenshots/7-payment-success.png)
-
----
-
-# Next Milestones
-
-- Complete sandbox verification
-- Final webhook testing
-- Production deployment
-- Merchant onboarding
-- Recurring subscription automation
+No legacy payment providers will remain in the final implementation. Every payment operation will execute exclusively through Nomba.
