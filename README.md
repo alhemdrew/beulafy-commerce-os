@@ -246,7 +246,7 @@ Nomba payment architecture.
 
 ## Product Structure
 
-![Product Structure](https://raw.githubusercontent.com/alhemdrew/beulafy-commerce-os/main/docs/screenshots/10-product-structure.png)
+![Product Structure](https://raw.githubusercontent.com/alhemdrew/beulafy-commerce-os/main/docs/screenshots/10-project-structure.png)
 
 Commerce domain model.
 
