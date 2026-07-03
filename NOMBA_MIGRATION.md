@@ -1,212 +1,249 @@
-# Flutterwave to Nomba Migration
+# Nomba Migration Documentation
 
-## Purpose
+## Overview
 
-This document describes the migration of Beulafy from a multi-provider payment implementation to a Nomba-first payment architecture.
+This document explains the migration of Beulafy Commerce OS from a multi-provider payment architecture to a Nomba-first payment platform.
 
-The migration removes legacy gateway dependencies and consolidates every payment operation through a unified Nomba service layer.
-
----
-
-# Migration Objectives
-
-Replace
-
-- Flutterwave
-- Legacy payment wrappers
-- Mixed verification logic
-
-With
-
-- Nomba Checkout
-- Nomba Verification API
-- Nomba Webhooks
-- Shared Payment Services
+The migration focuses on correctness, security, maintainability and compliance with the official Nomba integration recommendations.
 
 ---
 
-# Payment Philosophy
+# Migration Goals
 
-The application never trusts:
+Previous architecture
 
-- browser responses
-- callback query parameters
-- frontend payment status
-- frontend amounts
+```
+Application
 
-Every payment is confirmed directly from Nomba.
+↓
+
+Flutterwave
+
+↓
+
+Verification
+```
+
+New architecture
+
+```
+Application
+
+↓
+
+Payment Domain
+
+↓
+
+Nomba Services
+
+↓
+
+Verification
+
+↓
+
+Webhook
+
+↓
+
+Database
+```
 
 ---
 
-# Verification Flow
+# Why the Migration?
 
+The previous implementation tightly coupled payment logic to specific gateways.
+
+The new architecture introduces:
+
+- Payment abstraction
+- Shared verification
+- Modular services
+- Centralized logging
+- Better testing
+- Secure callbacks
+
+---
+
+# Current Implementation
+
+Implemented
+
+- Checkout initialization
+- Payment services
+- Verification service
+- Callback handlers
+- Transaction repository
+- Audit service
+- Replay protection
+- Sandbox configuration
+- Shared money service
+
+Currently Completing
+
+- End-to-end sandbox validation
+- Recurring subscription flow
+- Production deployment testing
+
+---
+
+# Security Model
+
+Every payment follows this sequence.
+
+```
 Customer
 
 ↓
 
-Pay on Nomba
+Checkout
 
 ↓
 
-Return Callback
+Nomba
 
 ↓
 
-Receive Transaction Reference
+Callback
 
 ↓
 
-Server Requests Verification
+Verify with Nomba API
 
 ↓
 
-Nomba Responds
+Validate Amount
 
 ↓
 
-Validate
-
-- payment status
-- transaction reference
-- merchant account
-- amount
-- currency
-- customer email
+Validate Currency
 
 ↓
 
-Update Database
+Validate Reference
 
 ↓
 
-Complete Business Logic
+Store Transaction
 
----
+↓
 
-# Security Principles
-
-## Server Authoritative
-
-Only the server decides whether payment succeeded.
-
----
-
-## Amount Validation
-
-Every amount is stored internally.
-
-Returned Nomba values are compared against the stored transaction amount.
-
-Amounts are converted using Kobo.
-
-No browser amount is trusted.
-
----
-
-## Replay Protection
-
-Every verified transaction is stored.
-
-Duplicate verification attempts are rejected.
-
-Duplicate webhooks are ignored.
-
----
-
-## Pending Transactions
-
-Orders remain pending until verification succeeds.
-
-No inventory updates occur before verification.
-
-No subscriptions activate before verification.
-
----
-
-## Webhooks
-
-Webhooks become the source of truth.
-
-Callbacks improve user experience.
-
-Business actions depend on successful verification.
-
----
-
-# Current Payment Modules
-
-Payments/
-
-├── CheckoutService
-
-├── ProductPaymentService
-
-├── SubscriptionPaymentService
-
-├── VerificationService
-
-├── WebhookService
-
-├── ReplayProtection
-
-├── MoneyService
-
-├── AuditService
-
-├── TransactionRepository
-
----
-
-# Environment Variables
-
-```
-NOMBA_PUBLIC_KEY=
-
-NOMBA_SECRET_KEY=
-
-NOMBA_ACCOUNT_ID=
-
-NOMBA_WEBHOOK_SECRET=
-
-NOMBA_BASE_URL=
+Activate Product
 ```
 
----
-
-# Sandbox
-
-Current development uses the official Nomba Sandbox.
-
-Before production deployment:
-
-- replace sandbox credentials
-- update webhook URL
-- enable production API
-- verify SSL
-- perform end-to-end payment testing
+No customer data is trusted until Nomba confirms the payment.
 
 ---
 
-# Remaining Work
+# Amount Handling
 
-- Complete sandbox validation
-- Inclusion of multi/recurring sub. payment feature.
-- Final webhook signature verification
-- Performance optimization
-- UI polishing
+All amounts are processed internally in Kobo.
+
+Workflow
+
+```
+NGN
+
+↓
+
+MoneyService
+
+↓
+
+Kobo
+
+↓
+
+Nomba
+
+↓
+
+Verify
+
+↓
+
+Convert Back
+```
+
+This avoids floating-point inaccuracies.
+
+---
+
+# Callback Strategy
+
+Client callback
+
+Purpose
+
+User experience only.
+
+Server callback
+
+Purpose
+
+Display payment result.
+
+Webhook
+
+Purpose
+
+Actual payment confirmation.
+
+Only webhook/API verification updates records.
+
+---
+
+# Current Progress
+
+Completed
+
+- Architecture
+- Services
+- Payment verification
+- Database integration
+- Logging
+- Sandbox support
+
+Remaining
+
+- Final recurring billing
+- Complete webhook production validation
+- Production credentials
+
+---
+
+# Screenshots
+
+## Payment Architecture
+
+![](docs/screenshots/9-payment-architecture.png)
+
+---
+
+## Product Checkout
+
+![](docs/screenshots/4-product-checkout.png)
+
+---
+
+## Subscription Payment
+
+![](docs/screenshots/5-subscription-payment.png)
+
+---
+
+## Payment Success
+
+![](docs/screenshots/7-payment-success.png)
+
+---
+
+# Next Milestones
+
+- Complete sandbox verification
+- Final webhook testing
 - Production deployment
-
----
-
-# Outcome
-
-The final platform will operate exclusively on Nomba with:
-
-- one payment provider
-- one verification process
-- one webhook architecture
-- centralized payment services
-- secure server-authoritative payment handling
-- scalable payment infrastructure
-
-This migration aligns the platform with modern payment security standards and demonstrates a production-ready Nomba integration suitable for deployment after final testing.
+- Merchant onboarding
+- Recurring subscription automation
