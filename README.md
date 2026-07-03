@@ -59,6 +59,24 @@ Remaining before production:
 - Final UI polish
 - Complete integration testing
 
+  # Nomba Integration Highlights
+
+The payment layer has been redesigned around the official Nomba APIs using a server-authoritative architecture.
+
+Current implementation includes:
+
+- Secure Checkout Initialization
+- Sandbox Environment Integration
+- Payment Verification
+- Callback Handling
+- Webhook Processing
+- Kobo-based Currency Handling
+- Replay Protection
+- Audit Logging
+- Idempotent Transaction Processing
+
+The final implementation will route all payment operations exclusively through Nomba.
+
 ---
 
 # Architecture
@@ -272,7 +290,30 @@ docs/
 ```
 
 ---
+# Roadmap
 
+## Stage 1 ✅
+
+- Commerce platform
+- Merchant management
+- Store management
+- Product management
+- Checkout architecture
+- Nomba payment architecture
+- Security layer
+- Documentation
+
+---
+
+## Stage 2 🚧
+
+- Complete Sandbox integration
+- Webhook validation
+- Recurring subscriptions
+- Production deployment
+- Merchant analytics
+- Performance optimization
+  
 # Current Status
 
 This repository represents our Stage 1 MVP.
