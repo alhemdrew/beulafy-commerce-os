@@ -1,170 +1,254 @@
 # Beulafy Commerce OS
-
-> A modern multi-tenant commerce platform powered entirely by Nomba Payments.
+### A Modern Multi-Tenant Commerce Platform Powered by Nomba Payments
 
 ![PHP](https://img.shields.io/badge/PHP-8.x-blue)
-![MySQL](https://img.shields.io/badge/MySQL-Database-orange)
-![Nomba](https://img.shields.io/badge/Payments-Nomba-success)
-![Status](https://img.shields.io/badge/Build-Stage%201-brightgreen)
+![MySQL](https://img.shields.io/badge/MySQL-orange)
+![Architecture](https://img.shields.io/badge/Architecture-Modular-success)
+![Nomba](https://img.shields.io/badge/Nomba-Sandbox-green)
 
 ---
 
-# Overview
+## Overview
 
-Beulafy Commerce OS enables businesses to launch complete online stores while managing products, subscriptions, customers and payments from one platform.
+Beulafy Commerce OS is a modern multi-tenant commerce platform that enables businesses to create digital storefronts, manage products, accept secure online payments, and manage subscriptions.
 
-For the DevCareer × Nomba Hackathon, the platform has been redesigned to use **Nomba as the only payment infrastructure**.
+For the DevCareer × Nomba Hackathon, the platform is being migrated from multiple payment providers into a **Nomba-first payment architecture** using the official Nomba APIs.
 
-Every payment flow—including merchant subscriptions and customer product purchases—is now being migrated into a unified Nomba payment domain following Nomba's recommended payment architecture.
+Our focus is not simply integrating a payment gateway, but redesigning the entire payment domain around Nomba best practices.
 
 ---
 
 # Current Progress
 
-Current completion:
+Current completion is approximately **80-85%**.
 
-✅ Multi-tenant business platform
+Completed:
 
-✅ Store management
-
-✅ Product management
-
-✅ Customer ordering
-
-✅ Merchant subscriptions
-
-✅ Transaction recording
-
-✅ Notification engine
-
-✅ Commission system
-
-✅ Nomba payment architecture
-
-✅ Payment abstraction layer
-
-✅ Webhook infrastructure
-
-✅ Verification infrastructure
-
-✅ Replay protection
-
-✅ Audit logging
-
-🚧 Final API integration
-
-🚧 Sandbox verification
-
-🚧 Recurring subscription implementation
-
-🚧 Production deployment
-
----
-
-# Core Features
-
-## Merchant Features
-
-- Business registration
+- Multi-tenant architecture
+- Business management
 - Store creation
 - Product management
-- Subscription management
-- Dashboard
-- Analytics
+- Shopping cart
+- Checkout flow
+- Subscription plans
 - Order management
+- Transaction recording
+- Payment abstraction layer
+- Nomba payment architecture
+- Sandbox configuration
+- Secure verification layer
+- Callback structure
+- Webhook architecture
+- Audit logging
+- Replay protection
+- Payment verification strategy
 
----
+Remaining before production:
 
-## Customer Features
-
-- Browse stores
-- Purchase products
-- Secure checkout
-- Order confirmation
-- Payment receipts
-
----
-
-## Payment Features
-
-Entire payment infrastructure powered by **Nomba**
-
-Supports
-
-- Product Checkout
-- Merchant Subscription Checkout
-- Server-side Verification
-- Webhook Processing
-- Transaction Logging
-- Replay Protection
-- Audit Trail
-- Signature Validation
-- Callback Validation
-- Idempotent Processing
+- Final end-to-end sandbox testing
+- Complete webhook verification
+- Subscription recurring payment implementation
+- Production credential switch
+- Final UI polish
+- Complete integration testing
 
 ---
 
 # Architecture
 
 ```
-Customer
-
-↓
-
+Business
+      │
+      ▼
+Store
+      │
+      ▼
+Products
+      │
+      ▼
 Checkout
-
-↓
-
-Payment Service Factory
-
-↓
-
-Nomba Checkout Service
-
-↓
-
-Nomba API
-
-↓
-
-Webhook
-
-↓
-
-Verification
-
-↓
-
-Order Processing
-
-↓
-
+      │
+      ▼
+Nomba Checkout
+      │
+      ▼
+Callback
+      │
+      ▼
+Server Verification
+      │
+      ▼
+Webhook Validation
+      │
+      ▼
+Order Confirmation
+      │
+      ▼
 Notifications
-
-↓
-
-Database
 ```
+
+---
+
+# Core Features
+
+## Business Management
+
+- Create businesses
+- Manage multiple stores
+- Business dashboard
+- Subscription management
+
+---
+
+## Product Management
+
+- Product catalogue
+- Categories
+- Inventory
+- Product images
+- Pricing
+
+---
+
+## Customer Checkout
+
+Customers can
+
+- Purchase products
+- Make secure payments
+- Receive payment confirmations
+- View order status
+
+---
+
+## Subscription Billing
+
+Businesses subscribe to Beulafy through Nomba payments.
+
+Current work includes:
+
+- Subscription checkout
+- Subscription verification
+- Renewal architecture
+- Future recurring billing support
+
+---
+
+# Nomba Integration
+
+Current implementation includes:
+
+- Checkout initialization
+- Sandbox support
+- Secure callbacks
+- Payment verification
+- Webhook processing
+- Server-side validation
+- Amount verification
+- Kobo conversion
+- Replay attack protection
+- Transaction logging
+
+---
+
+# Security
+
+The payment flow is designed to be completely server-authoritative.
+
+We never trust:
+
+- browser payment status
+- callback success parameters
+- client amounts
+- frontend references
+
+Instead we verify every payment directly with Nomba before updating any records.
 
 ---
 
 # Technology
 
-PHP 8
+- PHP 8
+- MySQL
+- JavaScript
+- HTML5
+- CSS3
+- REST APIs
+- Nomba Sandbox APIs
 
-MySQL
+---
 
-HTML
+# Screenshots
 
-CSS
+## Homepage
 
-JavaScript
+![](docs/screenshots/1-homepage.png)
 
-Nomba API
+Landing page and entry point.
 
-Apache
+---
 
-REST API
+## Dashboard
+
+![](docs/screenshots/2-dashboard.png)
+
+Business overview dashboard.
+
+---
+
+## Store Management
+
+![](docs/screenshots/3-store-management.png)
+
+Manage stores and products.
+
+---
+
+## Product Checkout
+
+![](docs/screenshots/4-product-checkout.png)
+
+Customer checkout process.
+
+---
+
+## Subscription Payment
+
+![](docs/screenshots/5-subscription-payment.png)
+
+Subscription purchase flow.
+
+---
+
+## Payment Success
+
+![](docs/screenshots/7-payment-success.png)
+
+Successful payment confirmation.
+
+---
+
+## Database Design
+
+![](docs/screenshots/8-database.png)
+
+Current relational database structure.
+
+---
+
+## Payment Architecture
+
+![](docs/screenshots/9-payment-architecture.png)
+
+Nomba payment architecture.
+
+---
+
+## Product Structure
+
+![](docs/screenshots/10-product-structure.png)
+
+Commerce domain model.
 
 ---
 
@@ -172,90 +256,18 @@ REST API
 
 ```
 src/
-
-Payments/
-
-Nomba/
-
-Repositories/
-
-DTOs/
-
-Shared/
-
-Models/
-
-pay/
-
-admin/
-
 config/
-
-database/
-
+payments/
+pay/
+admin/
 public/
+docs/
 ```
 
 ---
 
-# Current Build Stage
+# Current Status
 
-The project is currently undergoing the final payment migration from legacy providers into a completely Nomba-powered architecture.
+This repository represents our Stage 1 MVP.
 
-Remaining work primarily focuses on
-
-- Final sandbox validation
-- Recurring subscriptions
-- End-to-end payment testing
-- Production hardening
-
-The business platform itself is operational.
-
----
-
-# Screenshots
-
-## Login
-
-docs/screenshots/login.png
-
-## Dashboard
-
-docs/screenshots/dashboard.png
-
-## Businesses
-
-docs/screenshots/businesses.png
-
-## Store
-
-docs/screenshots/store.png
-
-## Products
-
-docs/screenshots/products.png
-
-## Subscription
-
-docs/screenshots/subscription.png
-
-## Product Checkout
-
-docs/screenshots/product-checkout.png
-
-## Nomba Checkout
-
-docs/screenshots/nomba-checkout.png
-
----
-
-# Documentation
-
-See
-
-- NOMBA_IMPLEMENTATION_SUMMARY.md
-- NOMBA_MIGRATION.md
-
----
-
-Built for the DevCareer × Nomba Hackathon 2026.
+The application architecture is complete, while the final Nomba payment flow is undergoing end-to-end sandbox validation before production deployment.
