@@ -182,7 +182,7 @@ Instead we verify every payment directly with Nomba before updating any records.
 
 ## Homepage
 
-![](docs/screenshots/1-homepage.png)
+![Homepage](https://raw.githubusercontent.com/alhemdrew/beulafy-commerce-os/main/docs/screenshots/01-homepage.png)
 
 Landing page and entry point.
 
@@ -190,7 +190,7 @@ Landing page and entry point.
 
 ## Dashboard
 
-![](docs/screenshots/2-dashboard.png)
+![Dashboard](https://raw.githubusercontent.com/alhemdrew/beulafy-commerce-os/main/docs/screenshots/02-dashboard.png)
 
 Business overview dashboard.
 
@@ -198,7 +198,7 @@ Business overview dashboard.
 
 ## Store Management
 
-![](docs/screenshots/3-store-management.png)
+![Store Management](https://raw.githubusercontent.com/alhemdrew/beulafy-commerce-os/main/docs/screenshots/03-store-management.png)
 
 Manage stores and products.
 
@@ -206,7 +206,7 @@ Manage stores and products.
 
 ## Product Checkout
 
-![](docs/screenshots/4-product-checkout.png)
+![Product Checkout](https://raw.githubusercontent.com/alhemdrew/beulafy-commerce-os/main/docs/screenshots/04-product-checkout.png)
 
 Customer checkout process.
 
@@ -214,7 +214,7 @@ Customer checkout process.
 
 ## Subscription Payment
 
-![](docs/screenshots/5-subscription-payment.png)
+![Subscription Payment](https://raw.githubusercontent.com/alhemdrew/beulafy-commerce-os/main/docs/screenshots/05-subscription-payment.png)
 
 Subscription purchase flow.
 
@@ -222,7 +222,7 @@ Subscription purchase flow.
 
 ## Payment Success
 
-![](docs/screenshots/7-payment-success.png)
+![Payment Success](https://raw.githubusercontent.com/alhemdrew/beulafy-commerce-os/main/docs/screenshots/07-payment-success.png)
 
 Successful payment confirmation.
 
@@ -230,7 +230,7 @@ Successful payment confirmation.
 
 ## Database Design
 
-![](docs/screenshots/8-database.png)
+![Database Design](https://raw.githubusercontent.com/alhemdrew/beulafy-commerce-os/main/docs/screenshots/08-database.png)
 
 Current relational database structure.
 
@@ -238,7 +238,7 @@ Current relational database structure.
 
 ## Payment Architecture
 
-![](docs/screenshots/9-payment-architecture.png)
+![Payment Architecture](https://raw.githubusercontent.com/alhemdrew/beulafy-commerce-os/main/docs/screenshots/09-payment-architecture.png)
 
 Nomba payment architecture.
 
@@ -246,7 +246,7 @@ Nomba payment architecture.
 
 ## Product Structure
 
-![](./docs/screenshots/10-product-structure.png)
+![Product Structure](https://raw.githubusercontent.com/alhemdrew/beulafy-commerce-os/main/docs/screenshots/10-product-structure.png)
 
 Commerce domain model.
 
