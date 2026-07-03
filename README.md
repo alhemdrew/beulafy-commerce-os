@@ -18,11 +18,18 @@ Our focus is not simply integrating a payment gateway, but redesigning the entir
 
 ---
 
-# Current Progress
+# Current Development Status
 
-Current completion is approximately **80-85%**.
+Beulafy Commerce OS has reached the MVP stage.
 
-Completed:
+The core commerce engine—including merchant onboarding, store management, product management, checkout, subscriptions, dashboards, and order management—is functional.
+
+Current development is focused on completing a full migration to the Nomba payment ecosystem using the official Sandbox APIs. The remaining work includes end-to-end payment validation, webhook verification, recurring subscription support, and final production hardening.
+
+This repository represents the Stage 1 Build progress for the DevCareer × Nomba Hackathon and will continue to evolve throughout the remaining build period.
+
+
+Current Implementation: 
 
 - Multi-tenant architecture
 - Business management
