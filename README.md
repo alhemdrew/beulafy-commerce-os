@@ -1,166 +1,261 @@
-# Beulafy Commerce Platform — Powered by Nomba
+# Beulafy Commerce OS
 
-> A modern multi-merchant commerce platform that enables businesses to create online stores, manage subscriptions, sell products, and receive secure payments through Nomba.
+> A modern multi-tenant commerce platform powered entirely by Nomba Payments.
 
----
-
-## Overview
-
-Beulafy is a commerce platform designed to simplify online business operations for merchants. It provides everything needed to launch and manage an online store, while integrating Nomba as the exclusive payment infrastructure for subscriptions and customer purchases.
-
-The project is being developed as part of the **DevCareer × Nomba Hackathon**, with a strong emphasis on secure payment processing, reliable transaction verification, and production-ready payment architecture.
+![PHP](https://img.shields.io/badge/PHP-8.x-blue)
+![MySQL](https://img.shields.io/badge/MySQL-Database-orange)
+![Nomba](https://img.shields.io/badge/Payments-Nomba-success)
+![Status](https://img.shields.io/badge/Build-Stage%201-brightgreen)
 
 ---
 
-## Current Features
+# Overview
 
-* Merchant Authentication
-* Business & Store Management
-* Product Management
-* Product Checkout
-* Subscription Management
-* Nomba Payment Integration
-* Server-side Payment Verification
-* Secure Callback Processing
-* Webhook Processing
-* Transaction Logging
-* Order Management
-* Notification System
+Beulafy Commerce OS enables businesses to launch complete online stores while managing products, subscriptions, customers and payments from one platform.
+
+For the DevCareer × Nomba Hackathon, the platform has been redesigned to use **Nomba as the only payment infrastructure**.
+
+Every payment flow—including merchant subscriptions and customer product purchases—is now being migrated into a unified Nomba payment domain following Nomba's recommended payment architecture.
 
 ---
 
-## Technology Stack
+# Current Progress
 
-* PHP 8
-* MySQL
-* JavaScript
-* HTML5
-* CSS3
-* Nomba Payment APIs
-* REST Architecture
+Current completion:
+
+✅ Multi-tenant business platform
+
+✅ Store management
+
+✅ Product management
+
+✅ Customer ordering
+
+✅ Merchant subscriptions
+
+✅ Transaction recording
+
+✅ Notification engine
+
+✅ Commission system
+
+✅ Nomba payment architecture
+
+✅ Payment abstraction layer
+
+✅ Webhook infrastructure
+
+✅ Verification infrastructure
+
+✅ Replay protection
+
+✅ Audit logging
+
+🚧 Final API integration
+
+🚧 Sandbox verification
+
+🚧 Recurring subscription implementation
+
+🚧 Production deployment
 
 ---
 
-## Payment Architecture
+# Core Features
 
-All payments are processed exclusively through **Nomba**.
+## Merchant Features
 
-The platform implements:
-
-* Checkout Initialization
-* Server-side Payment Verification
-* Webhook Processing
-* Transaction Reference Validation
-* Amount Verification (Kobo)
-* Replay Protection
-* Audit Logging
-* Secure Environment Variables
-* Callback Validation
-
-Client-side payment results are never trusted.
+- Business registration
+- Store creation
+- Product management
+- Subscription management
+- Dashboard
+- Analytics
+- Order management
 
 ---
 
-## Project Structure
+## Customer Features
+
+- Browse stores
+- Purchase products
+- Secure checkout
+- Order confirmation
+- Payment receipts
+
+---
+
+## Payment Features
+
+Entire payment infrastructure powered by **Nomba**
+
+Supports
+
+- Product Checkout
+- Merchant Subscription Checkout
+- Server-side Verification
+- Webhook Processing
+- Transaction Logging
+- Replay Protection
+- Audit Trail
+- Signature Validation
+- Callback Validation
+- Idempotent Processing
+
+---
+
+# Architecture
+
+```
+Customer
+
+↓
+
+Checkout
+
+↓
+
+Payment Service Factory
+
+↓
+
+Nomba Checkout Service
+
+↓
+
+Nomba API
+
+↓
+
+Webhook
+
+↓
+
+Verification
+
+↓
+
+Order Processing
+
+↓
+
+Notifications
+
+↓
+
+Database
+```
+
+---
+
+# Technology
+
+PHP 8
+
+MySQL
+
+HTML
+
+CSS
+
+JavaScript
+
+Nomba API
+
+Apache
+
+REST API
+
+---
+
+# Repository Structure
 
 ```
 src/
- ├── Payments/
- │    ├── Nomba/
- │    ├── Models/
- │    ├── DTOs/
- │    ├── Repositories/
- │    ├── Shared/
- │    └── Services/
- │
- ├── pay/
- ├── payments/
- ├── admin/
- └── config/
+
+Payments/
+
+Nomba/
+
+Repositories/
+
+DTOs/
+
+Shared/
+
+Models/
+
+pay/
+
+admin/
+
+config/
+
+database/
+
+public/
 ```
+
+---
+
+# Current Build Stage
+
+The project is currently undergoing the final payment migration from legacy providers into a completely Nomba-powered architecture.
+
+Remaining work primarily focuses on
+
+- Final sandbox validation
+- Recurring subscriptions
+- End-to-end payment testing
+- Production hardening
+
+The business platform itself is operational.
 
 ---
 
 # Screenshots
 
-## Homepage
+## Login
 
-![](docs/screenshots/01-homepage.png)
+docs/screenshots/login.png
 
----
+## Dashboard
 
-## Merchant Dashboard
+docs/screenshots/dashboard.png
 
-![](docs/screenshots/02-dashboard.png)
+## Businesses
 
----
+docs/screenshots/businesses.png
 
-## Store Management
+## Store
 
-![](docs/screenshots/03-store-management.png)
+docs/screenshots/store.png
 
----
+## Products
+
+docs/screenshots/products.png
+
+## Subscription
+
+docs/screenshots/subscription.png
 
 ## Product Checkout
 
-![](docs/screenshots/04-product-checkout.png)
-
----
-
-## Subscription Payment
-
-![](docs/screenshots/05-subscription-payment.png)
-
----
+docs/screenshots/product-checkout.png
 
 ## Nomba Checkout
 
-![](docs/screenshots/06-nomba-checkout.png)
+docs/screenshots/nomba-checkout.png
 
 ---
 
-## Payment Success
+# Documentation
 
-![](docs/screenshots/07-payment-success.png)
+See
 
----
-
-## Database Records
-
-![](docs/screenshots/08-database.png)
+- NOMBA_IMPLEMENTATION_SUMMARY.md
+- NOMBA_MIGRATION.md
 
 ---
 
-## Payment Architecture
-
-![](docs/screenshots/09-payment-architecture.png)
-
----
-
-## Project Structure
-
-![](docs/screenshots/10-project-structure.png)
-
----
-
-## Documentation
-
-Additional documentation can be found in:
-
-* STAGE_1_PROGRESS.md
-
----
-
-## Status
-
-Current Status:
-
-**Stage 1 MVP**
-
-Core commerce functionality is operational, while additional production hardening, testing, and deployment improvements are currently in progress.
-
----
-
-## License
-
-MIT License.
+Built for the DevCareer × Nomba Hackathon 2026.
