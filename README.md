@@ -182,7 +182,7 @@ Instead we verify every payment directly with Nomba before updating any records.
 
 ## Homepage
 
-![](docs/screenshots/1-homepage.png)
+![](./docs/screenshots/1-homepage.png)
 
 Landing page and entry point.
 
@@ -190,7 +190,7 @@ Landing page and entry point.
 
 ## Dashboard
 
-![](docs/screenshots/2-dashboard.png)
+![](./docs/screenshots/2-dashboard.png)
 
 Business overview dashboard.
 
@@ -198,7 +198,7 @@ Business overview dashboard.
 
 ## Store Management
 
-![](docs/screenshots/3-store-management.png)
+![](./docs/screenshots/3-store-management.png)
 
 Manage stores and products.
 
@@ -206,7 +206,7 @@ Manage stores and products.
 
 ## Product Checkout
 
-![](docs/screenshots/4-product-checkout.png)
+![](./docs/screenshots/4-product-checkout.png)
 
 Customer checkout process.
 
@@ -222,7 +222,7 @@ Subscription purchase flow.
 
 ## Payment Success
 
-![](docs/screenshots/7-payment-success.png)
+![](./docs/screenshots/7-payment-success.png)
 
 Successful payment confirmation.
 
@@ -238,7 +238,7 @@ Current relational database structure.
 
 ## Payment Architecture
 
-![](docs/screenshots/9-payment-architecture.png)
+![](./docs/screenshots/9-payment-architecture.png)
 
 Nomba payment architecture.
 
@@ -246,7 +246,7 @@ Nomba payment architecture.
 
 ## Product Structure
 
-![](docs/screenshots/10-product-structure.png)
+![](./docs/screenshots/10-product-structure.png)
 
 Commerce domain model.
 
